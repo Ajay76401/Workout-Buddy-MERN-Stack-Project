@@ -20,7 +20,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-    origin: 'https://workout-buddy-mern-stack-project.vercel.app', // your frontend URL
+    origin: 'https://workout-buddy-mern-stack-project.onrender.com/', // your frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true // only if using cookies or auth
 }));

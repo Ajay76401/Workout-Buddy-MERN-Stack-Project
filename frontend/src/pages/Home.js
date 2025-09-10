@@ -19,7 +19,7 @@ const Home = () => {
     const fetchWorkout = async () => {
       //  const response = awaitfetch('/api/workout/')
 
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}api/workout/`)
+      const response = await fetch('https://workout-buddy-backend-1h9o.onrender.com/api/workout/')
       const json = await response.json()
 
       if (response.ok) {
