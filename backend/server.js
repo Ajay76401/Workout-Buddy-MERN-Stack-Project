@@ -1,6 +1,7 @@
 const express = require("express")
 const dotenv = require("dotenv")
 const mongoode = require("mongoose")
+const cors = require('cors');
 
 
 const workoutRoutes = require("./routes/workout")
@@ -13,7 +14,9 @@ const app = express();
 
 app.use(express.json()); 
 
-
+app.use(cors({
+    origin: 'https://workout-buddy-mern-stack-project.vercel.app'
+}));
 
 app.use((req,res,next) =>{
     console.log(req.path,req.method)
