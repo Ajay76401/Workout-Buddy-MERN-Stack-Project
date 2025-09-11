@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
 app.use("/api/workout", workoutRoutes);
 
 // DB connection + server start
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT ;
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
