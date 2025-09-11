@@ -1,5 +1,5 @@
 // import React, { useEffect, useState } from 'react'
-import React, { useEffect } from 'react'
+import React, { useEffect} from 'react'
 
 //Components
 import WorkoutDetails from '../components/WorkoutDetails';
@@ -10,23 +10,21 @@ import { useWorkoutsContext } from '../hooks/useWorkoutContext';
 
 const Home = () => {
 
-  // USeState
+// USeState
   // const [workouts, setWorkouts] = useState(null);
 
-  const { workouts, dispatch } = useWorkoutsContext()
+  const {workouts, dispatch} = useWorkoutsContext()
 
   useEffect(() => {
     const fetchWorkout = async () => {
-      //  const response = awaitfetch('/api/workout/')
-
-      const response = await fetch('https://workout-buddy-backend-1h9o.onrender.com/api/workout/')
+      const response = await fetch('/api/workout/')
       const json = await response.json()
 
       if (response.ok) {
         //UseState
         // setWorkouts(json)
-
-        dispatch({ type: 'SET_WORKOUTS', payload: json })
+        
+        dispatch({type:'SET_WORKOUTS',payload: json})
       }
     }
     fetchWorkout()
