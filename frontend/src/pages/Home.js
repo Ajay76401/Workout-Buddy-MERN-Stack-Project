@@ -17,7 +17,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchWorkout = async () => {
-      const response = await fetch('/api/workout/')
+      const response = await fetch(`https://workout-buddy-backend-oolj.onrender.com/api/workout`)
       const json = await response.json()
 
       if (response.ok) {

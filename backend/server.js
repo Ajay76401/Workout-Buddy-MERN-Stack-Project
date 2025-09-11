@@ -2,6 +2,8 @@ const express = require("express")
 const dotenv = require("dotenv")
 const mongoode = require("mongoose")
 
+const cors = require("cors");
+
 
 const workoutRoutes = require("./routes/workout")
 const { default: mongoose } = require("mongoose")
@@ -10,6 +12,10 @@ dotenv.config()
 
 
 const app = express();
+app.use(cors({
+      origin: "https://your-frontend.onrender.com"
+}));
+
 
 app.use(express.json()); 
 
@@ -19,7 +25,9 @@ app.use((req,res,next) =>{
     console.log(req.path,req.method)
     next()
 })
-
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "API is running" });
+});
 
 app.get('/',(req,res)=>{
     res.json({
