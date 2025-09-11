@@ -12,7 +12,7 @@ const app = express();
 
 // ✅ Allow all origins (no CORS errors)
 app.use(cors({
-  origin: "*"
+  origin: "https://workout-buddy-frontend-p5zj.onrender.com"
 }));
 
 // Middleware to parse JSON
