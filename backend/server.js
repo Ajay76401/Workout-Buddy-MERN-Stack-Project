@@ -4,7 +4,10 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
+//Routes
 const workoutRoutes = require("./routes/workout");
+const userRoutes = require('./routes/user')
+
 
 dotenv.config();
 
@@ -31,14 +34,15 @@ app.get("/", (req, res) => {
 
 // API routes
 app.use("/api/workout", workoutRoutes);
+app.use("/api/user", userRoutes)
 
 // DB connection + server start
-const PORT = process.env.PORT ;
+const PORT = process.env.PORT;
 
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     app.listen(PORT, () => {
-      console.log(`✅ Server running on http://localhost:${PORT} & connected to DB`);
+      console.log(`✅ Server running  & connected to DB`);
     });
   })
   .catch((error) => console.error("❌ DB connection error:", error));

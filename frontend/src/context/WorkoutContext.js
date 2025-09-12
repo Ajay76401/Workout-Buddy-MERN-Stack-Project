@@ -16,7 +16,9 @@ export const workoutsReducer = (state, action) => {
             }
 
         case 'DELETE_WORKOUT':
-            return state
+            return {
+                   workouts: state.workouts.filter(w => w._id !== action.payload)
+            }
 
         default:
             return state

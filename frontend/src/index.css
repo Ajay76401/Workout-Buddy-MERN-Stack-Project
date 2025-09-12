@@ -50,7 +50,29 @@ header a {
   padding: 20px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.workout-details-right button {
+
+  background-color: var(--error);
+  color: #DDD;
+  border: none;
+  font-size: 1.2rem;
+  padding: 10px 15px;
+  border-radius: 7px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  /* margin-right: 1rem; */
+
+}
+
+.workout-details-right button:hover {
+     background-color:  #a40537;
+}
+
 
 .workout-details h4 {
   margin: 0 0 10px 0;
@@ -80,17 +102,19 @@ header a {
 
 }
 
-.create h3{
+.create h3 {
   color: var(--primary);
 }
+
 label,
 input {
   display: block;
 }
 
-label{
+label {
   font-weight: 700;
 }
+
 input {
   padding: 10px;
   margin-top: 10px;
@@ -99,7 +123,7 @@ input {
   border: 1px solid #DDD;
   border-radius: 4px;
   box-sizing: border-box;
-  box-shadow: 1px 1px 5px  rgba(0, 0, 0, 0.5) ;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 form button {
@@ -113,7 +137,8 @@ form button {
   font-weight: 500;
 
 }
-div.error{
+
+div.error {
   padding: 10px;
   background-color: #ffefef;
   border: 1px solid var(--error);
