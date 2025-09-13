@@ -18,6 +18,12 @@ N
 
 #  npm i mongoose
 
+# npm i cors
+
+# npm i bcrypt
+
+# npm i validator
+
 
 
 # API EndPoinis : 

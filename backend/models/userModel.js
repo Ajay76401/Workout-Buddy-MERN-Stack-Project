@@ -1,5 +1,8 @@
 const mongoose = require('mongoose')
+// bacrypt is imported for encrypting the password
 const bcrypt = require("bcrypt")
+// validtor is used to validate the email and the password
+const validator = require('validator')
 
 const Schema = mongoose.Schema
 
@@ -20,6 +23,17 @@ const userSchema = new Schema({
 //Static Sign-up method
 userSchema.statics.signup = async function (email, password) {
     const exists = await this.findOne({ email })
+
+    if(!email || !password){
+        throw Error ("All Fields are Mandatory")
+    }
+    if(!validator.isEmail(email)){
+        throw Error ('Email is Not valid')
+    }
+    if(!validator.isStrongPassword(password)){
+        throw Error ('Enter a Strong password')
+    }
+
 
     if (exists) {
         throw Error("Email already Exits")
